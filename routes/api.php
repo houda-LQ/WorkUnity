@@ -13,7 +13,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+use App\Http\Controllers\EmployeeController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/employees', [EmployeeController::class, 'store'])->name('employees.store');
+Route::post('/employees', [EmployeeController::class, 'update'])->name('employees.update');
+
+
