@@ -10,7 +10,7 @@
       Une application intuitive pour visualiser, ajouter et gérer vos équipes en toute efficacité.
     </p>
 
-    <a href="" 
+    <a href="/employee" 
        class="inline-block bg-[#fadb5f] text-black px-6 py-3 rounded-xl font-semibold hover:bg-[#fdde61] transition transform hover:scale-105">
        Voir les employés
     </a>

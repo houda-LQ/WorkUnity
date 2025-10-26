@@ -22,7 +22,7 @@ class EmployeeController extends Controller
                
             ]
         );
-         return redirect()->route('index');
+         return redirect("/employee");
     }
 
      public function update(Request $request  ,$id){
@@ -31,10 +31,13 @@ class EmployeeController extends Controller
         $employe->nom= $request->nom;
         $employe->prenom= $request->prenom;
         $employe->email= $request->email;
+        $employe->poste= $request->poste;
     
-            
-        return redirect()->route('index');
+        $employe->save(); 
+        return redirect("/employee");
+
         }
+        
 }
    public function edit($id) {
         $employe = Employee::findOrFail($id);
@@ -45,9 +48,10 @@ class EmployeeController extends Controller
         $employe = Employee::find($id);
        if ($employe) {
         $employe->delete();
-            return "delete with sucssess";
+            return redirect("/employee");
         }
         return "introuvable";
+        
       }
     
 

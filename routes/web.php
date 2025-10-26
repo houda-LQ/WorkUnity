@@ -27,9 +27,8 @@ Route::get("/ajout",function(){
 
 
 Route::get('/employee', [EmployeeController::class, 'index'])->name('employees.index');
-Route::get('/employes/create', [EmployeeController::class, 'create'])->name('employes.create');
 Route::post('/employes', [EmployeeController::class, 'store'])->name('employes.store');
 Route::get('/employes/{id}/edit', [EmployeeController::class, 'edit'])->name('employes.edit');
 Route::put('/employes/{id}', [EmployeeController::class, 'update'])->name('employes.update');
-Route::delete('/employes/{id}', [EmployeeController::class, 'destroy'])->name('employes.destroy');
+Route::get('/employes/{id}/delete', [EmployeeController::class, 'destroy'])->name('employes.destroy');
 

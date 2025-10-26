@@ -4,7 +4,7 @@
 <div class="container mx-auto px-6 py-10">
   <div class="flex items-center justify-between mb-8">
     <h1 class="text-3xl font-bold text-gray-800">Liste des Employés</h1>
-    <a href="" 
+    <a href="/ajout" 
        class="bg-[#fadb5f]  px-4 py-2 rounded-lg hover:bg-[#ffdd57] transition">
       + Ajouter un employé
     </a>
@@ -16,6 +16,7 @@
         <tr>
           <th class="px-6 py-3 text-left">#</th>
           <th class="px-6 py-3 text-left">Nom</th>
+          <th class="px-6 py-3 text-left">Prénom</th>
           <th class="px-6 py-3 text-left">Poste</th>
           <th class="px-6 py-3 text-left">Email</th>
           <th class="px-6 py-3 text-center">Actions</th>
@@ -27,11 +28,12 @@
           <tr class="hover:bg-gray-50 transition">
             <td class="px-6 py-3">{{ $loop->iteration }}</td>
             <td class="px-6 py-3 font-medium text-gray-800">{{ $employe->nom }}</td>
+            <td class="px-6 py-3 font-medium text-gray-800">{{ $employe->prenom }}</td>
             <td class="px-6 py-3 text-gray-600">{{ $employe->poste ?? '—' }}</td>
             <td class="px-6 py-3 text-gray-600">{{ $employe->email ?? '—' }}</td>
             <td class="px-6 py-3 flex justify-center gap-4">
               {{-- Modifier --}}
-              <a href="" 
+              <a href="/employes/{{$employe->id}}/edit" 
                  class="text-yellow-500 hover:text-yellow-600 transition">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                      stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -42,18 +44,17 @@
               </a>
 
               {{-- Supprimer --}}
-              <form action="" method="POST"
-                    onsubmit="return confirm('Supprimer cet employé ?');">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="text-red-500 hover:text-red-600 transition">
+              <!-- <form action="/employes/{{$employe->id}}/delete" 
+                    onsubmit="return confirm('Supprimer cet employé ?');"> -->
+                <!-- @csrf -->
+                <a href="/employes/{{$employe->id}}/delete" class="text-red-500 hover:text-red-600 transition">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round"
                           d="M6 18L18 6M6 6l12 12" />
                   </svg>
-                </button>
-              </form>
+</a>
+              <!-- </form> -->
             </td>
           </tr>
         @empty

@@ -8,14 +8,14 @@
       Modifier un employé
     </h1>
 
-    <form action="" method="POST" class="space-y-5">
+    <form action="/employes/{{$employe->id}}" method="POST" class="space-y-5">
       @csrf
       @method('PUT')
 
       {{-- Nom --}}
       <div>
         <label for="nom" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
-        <input type="text" id="nom" name="nom" value=""
+        <input type="text" id="nom" name="nom" value="{{$employe->nom}}"
                class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#fadb5f] focus:border-[#fadb5f]"
                required>
       </div>
@@ -23,7 +23,7 @@
       {{-- Prénom --}}
       <div>
         <label for="prenom" class="block text-sm font-medium text-gray-700 mb-1">Prénom</label>
-        <input type="text" id="prenom" name="prenom" value=""
+        <input type="text" id="prenom" name="prenom" value="{{$employe->prenom}}"
                class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#fadb5f] focus:border-[#fadb5f]"
                required>
       </div>
@@ -31,7 +31,7 @@
       {{-- Email --}}
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-        <input type="email" id="email" name="email" value=""
+        <input type="email" id="email" name="email" value="{{$employe->email}}"
                class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#fadb5f] focus:border-[#fadb5f]"
                required>
       </div>
@@ -39,7 +39,7 @@
       {{-- Poste --}}
       <div>
         <label for="poste" class="block text-sm font-medium text-gray-700 mb-1">Poste</label>
-        <input type="text" id="poste" name="poste" value=""
+        <input type="text" id="poste" name="poste" value="{{$employe->poste}}"
                class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#fadb5f] focus:border-[#fadb5f]">
       </div>
 

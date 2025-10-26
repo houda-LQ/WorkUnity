@@ -8,9 +8,8 @@
       Ajouter un employé
     </h1>
 
-    <form action="" method="POST" class="space-y-5">
+    <form action="/employes" method="POST" class="space-y-5">
       @csrf
-      @method('PUT')
 
       {{-- Nom --}}
       <div>
